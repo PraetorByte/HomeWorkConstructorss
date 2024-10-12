@@ -246,7 +246,7 @@ class Homework
     
     public void SumArray(params int[] totalNums)
     {
-        
+        // NOTE: Где вызов локальной функции?
         int Local (params int[] totalNums)
         {
             int sum = 0;
@@ -313,7 +313,7 @@ class Animals
     public string Species;
     public string Name;
     public int Age;
-
+    // NOTE: Где конструктор???
 }
 
 class Rectangle
@@ -328,11 +328,13 @@ class Rectangle
     }
     public Rectangle(double width, double height)
     {
+        // NOTE: Где вызов одного конструктора из другого?
         this.Width = width;
         this.Height = height;
     }
     public Rectangle(double width, double height, int color)
     {
+        // NOTE: Где вызов одного конструктора из другого?
         this.Width = width;
         this.Height = height;
         this.Color = color;
@@ -384,15 +386,15 @@ class BankAccount
         this.AccountNumber = accNum;
         this.Owner = owner;
     }
-    public void Deposit(double balance)
+    public void Deposit(double balance) // NOTE: Работа метода не соответствует ТЗ.
     {
         this.Balance = balance;
-        Console.WriteLine($"Balance: {this.Balance}");
+        Console.WriteLine($"Balance: {this.Balance}"); // NOTE: В ТЗ не сказано, что метод должен что-то выводить в консоль. Это мусорный код.
     }
     public void Withdraw(double amount)
     {
         this.Balance = this.Balance < amount ? this.Balance : this.Balance - amount;
-        Console.WriteLine($"Balance: {this.Balance}");
+        Console.WriteLine($"Balance: {this.Balance}"); // NOTE: В ТЗ не сказано, что метод должен что-то выводить в консоль. Это мусорный код.
     }
 
 
